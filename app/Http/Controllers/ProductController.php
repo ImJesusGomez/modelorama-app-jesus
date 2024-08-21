@@ -9,7 +9,7 @@ class ProductController extends Controller
 {
 
   public function index(){
-    $products = Product::all();
+    $products = Product::paginate(25); // Nos divide la pagina
     return view('product.index-producto',  compact('products'));
   }
 

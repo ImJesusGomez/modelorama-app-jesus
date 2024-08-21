@@ -59,8 +59,8 @@ Route::get('/', function () {
 // });
 
 
-Route::get('/index-producto', [ProductController::class, 'index']);
+Route::get('/p-index', [ProductController::class, 'index'])->name('producto.index');
 
-Route::get('/create-producto', [ProductController::class, 'create']);
+Route::get('/p-create', [ProductController::class, 'create'])->name('producto.create');
 
-Route::get('/show-producto/{product}', [ProductController::class, 'show']);
+Route::get('/p-show/{product}', [ProductController::class, 'show'])->name('producto.show');

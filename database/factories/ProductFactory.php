@@ -22,11 +22,16 @@ class ProductFactory extends Factory
       // branch
       // price
         return [
-            'name' => fake()->name(),
-            'desc' => fake()->sentence(),
-            'branch' => fake()->name(),
+            // 'name' => fake()->name(),
+            // 'desc' => fake()->sentence(),
+            // 'branch' => fake()->name(),
+            // 'product_number' => fake()->numberBetween(100, 1000),
+            // 'price' => fake()->randomNumber(2),
+            'name' => fake()->lastName(),
+            'desc' => fake()->paragraphs(1, true),
+            'branch' => fake()->randomElement(['Modelo', 'Moctezuma', 'Heineken', 'Diageo', 'Carlsberg', 'Westvleteren']),
             'product_number' => fake()->numberBetween(100, 1000),
-            'price' => fake()->randomNumber(2),
+            'price' => fake()->randomFloat(2, 20, 250),
         ];
     }
 }

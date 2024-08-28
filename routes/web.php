@@ -20,47 +20,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// Route::get('/index-productos', function(){
-
-//   //$product = Product::find(2); // es un comando select
-
-//   //Crear nuevos producto
-//   $product = new Product();
-//   $product->name = 'Tecate';
-//   $product->product_number = '90482';
-//   $product->desc = 'Cerveza 450ml, clara';
-//   $product->branch = 'Modelo';
-//   $product->price = '35.00';
-
-//   $product->save();
-//   return $product; 
-  
-//   // $product = new Product();
-//   // $product->name = 'Pacifico';
-//   // $product->product_number = '3234';
-//   // $product->desc = 'Cerveza 800ml, clara';
-//   // $product->branch = 'Modelo';
-//   // $product->price = '35.00';
-//   // $product->save();
-//   // return $product; 
-
-//   // Order By
-//   // $product = Product::orderBy('name', 'desc')
-//   // ->select('name', 'price')
-//   // ->take(2)
-//   // ->get();
-
-//   // return $product;
-
-//   /* Pregunta de examen
-//   Los nombres en las tablas deben de ser en plural y de preferencia en ingles
-//   Los nombres de los modelos deben de estar en singular y con la primer letra en mayuscula
-//   */
-// });
-
-
 Route::get('/product', [ProductController::class, 'index'])->name('producto.index');
-Route::get('/product-create', [ProductController::class, 'create'])->name('producto.create');
 Route::post('/product', [ProductController::class, 'store'])->name('producto.store');
+Route::get('/product-edit/{product}', [ProductController::class, 'edit'])->name('producto.edit');
+Route::patch('/product-show/{product}', [ProductController::class, 'update'])->name('producto.update');
+Route::delete('/product-delete/{product}', [ProductController::class, 'destroy'])->name('producto.destroy');
+Route::get('/product-create', [ProductController::class, 'create'])->name('producto.create');
 Route::get('/product-show/{product}', [ProductController::class, 'show'])->name('producto.show');
 

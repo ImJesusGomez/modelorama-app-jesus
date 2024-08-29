@@ -1,7 +1,7 @@
 <x-app-layout>
   <div class="container">
-    <div class="mb-10 mt-4">
-      <nav class="border-gray-200 bg-gray-50 dark:bg-gray-800 dark:border-gray-700">
+    <div class="mb-10">
+      <nav class="border-blue-200 bg-blue-50 dark:bg-blue-800 dark:border-blue-700">
       <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
       <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
           <img src="https://img.freepik.com/vector-gratis/dibujado-mano-concepto-dia-internacional-cerveza_23-2148575018.jpg?size=338&ext=jpg&ga=GA1.1.1826414947.1724630400&semt=ais_hybrid" class="h-8" alt="Flowbite Logo" />
@@ -15,7 +15,7 @@
     </div>
     <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
       <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-          <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+          <thead class="text-xs text-gray-700 uppercase bg-blue-50 dark:bg-blue-700 dark:text-blue-400">
               <tr>
                   <th scope="col" class="px-6 py-3">
                       Nombre
@@ -38,13 +38,13 @@
                       <a href="{{ route('producto.show', $product->id)}}">{{$product->name}}</a>
                   </th>
                   <td class="px-6 py-4">
-                      {{$product->price}}
+                      ${{$product->price}}
                   </td>
                   <td class="px-6 py-4">
                       {{$product->desc}}
                   </td>
                   <td class="px-6 py-4">
-                      <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                      <a href=" {{route('producto.edit', $product->id) }} " class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
                   </td>
               </tr>
     @endforeach

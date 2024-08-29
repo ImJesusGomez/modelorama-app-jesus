@@ -15,14 +15,6 @@ return new class extends Migration
     {
       // CREATE
         Schema::create('products', function (Blueprint $table) {
-            // $table->id(); // Primary Key / Not Null / AutoIncrement /
-            // $table->integer('product_number');
-            // $table->longText('desc');
-            // $table->text('name');
-            // $table->text('branch');
-            // $table->text('price');
-
-            // $table->timestamps(); // Fecha Formateada (mms)
             
             $table->id();//primary, not null, auto increment
             $table->integer('product_number');

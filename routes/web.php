@@ -27,4 +27,5 @@ Route::patch('/product-show/{product}', [ProductController::class, 'update'])->n
 Route::delete('/product-delete/{product}', [ProductController::class, 'destroy'])->name('producto.destroy');
 Route::get('/product-create', [ProductController::class, 'create'])->name('producto.create');
 Route::get('/product-show/{product}', [ProductController::class, 'show'])->name('producto.show');
+Route::get('/products-report', [ProductController::class, 'getReport'])->name('producto.report');
 

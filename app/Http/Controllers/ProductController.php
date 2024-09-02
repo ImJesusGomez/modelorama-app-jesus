@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class ProductController extends Controller
 {
@@ -61,6 +62,14 @@ class ProductController extends Controller
     $product = Product::find($product);
     $product->delete();
     return redirect()->route('producto.index');
+  }
+
+  public function getReport(){
+
+    $products = Product::all();
+
+    $pdf = Pdf::loadView('product.report-producto', compact('products'));
+    return $pdf->download('reporte-productos.pdf');
   }
 
 
